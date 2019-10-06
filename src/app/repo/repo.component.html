@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">GitHub Repo search</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" [(ngModel)]="reponame" name="reponame"  (keyup.Enter)="findRepo()" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+<ul>
+  <li *ngFor="let item of repo.items; let i = index">
+    {{i}} {{item.owner.id}} {{item.owner.login}} {{item.id}} {{item.name}} {{item.full_name}} {{item.url}} {{item.description}} {{item.forks_count}} {{item.stargazers_count}} {{item.open_issues_count}}
+  </li>
+</ul>
+
+<!-- Repo -->
+    <!-- <div class="panel-body">
+
+      <div class="row">
+        <div class="col-md-8">
+          <div class="start">
+              <span class="label label-default">{{repo.id}} Repo ID</span>
+              <span class="label label-primary">{{repo.name}} Name</span>
+              <span class="label label-success">{{repo.full_name}} Full Name</span>
+              <span class="label label-info">{{repo.url}} URL</span>
+              <span class="label label-info">{{repo.description}} Description</span>
+              <br>
+
+            <ul class="list-group">
+                <li class="list-group-item"><strong>Forks Count:</strong> {{repo.forks_count}}</li>
+                <li class="list-group-item"><strong>Stargazers Count:</strong> {{repo.stargazers_count}}</li>
+                <li class="list-group-item"><strong>Open Issues Count:</strong> {{repo.open_issues_count}}</li>
+            </ul>
+
+          </div>
+        </div> -->
