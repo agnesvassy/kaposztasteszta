@@ -19,6 +19,15 @@
   </li>
 </ul>
 
+
+<h5>Issues: </h5>{{issues}}
+
+<ul>
+  <li *ngFor="let iss of issues | keyvalue; let i = index">
+    {{i}} - {{iss.key}} - {{iss.value}}
+  </li>
+</ul>
+
 <!-- Repo -->
     <!-- <div class="panel-body">
 
