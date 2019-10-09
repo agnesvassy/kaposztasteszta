@@ -20,10 +20,11 @@ export class RepoComponent implements OnInit {
   setClickedRow : Function;
   displayIssues : Function;
 
-   @Input () id: string;
+
 
   constructor(private service: RepoService) {
     this.service.getRepoInfo().subscribe(repo => {
+      console.log(this.reponame + 'reponame from constr');
       console.log(repo);
       console.log(repo.items[0].id);
       console.log(repo.items.length);
