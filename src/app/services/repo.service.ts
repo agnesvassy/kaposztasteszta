@@ -26,6 +26,8 @@ export class RepoService {
     private http: HttpClient,
     private messageService: MessageService) {
       console.log('service is now ready');
+      // this.reponame = 'React-Redux-Firebase-App';
+      // this.username = 'iamshaunjp';
       this.reponame = 'kaposztasteszta';
       this.username = 'agnesvassy';
       // this.reponame = 'bootstrap';
@@ -35,12 +37,14 @@ export class RepoService {
     }
 
     getRepoInfo (): Observable<Repo> {
+      console.log('REPONAME1'+ this.reponame);
       console.log('https://api.github.com/search/repositories?q=' + this.reponame);
       return this.http.get<Repo>('https://api.github.com/search/repositories?q=' + this.reponame)
       .pipe(
         tap(_ => this.log('fetched repo')),
         catchError(this.handleError<Repo>('getRepoInfo', ))
       );
+      console.log('REPONAME2'+ this.reponame);
     }
 
     getRepoIssues(): Observable<Issue> {
@@ -55,11 +59,13 @@ export class RepoService {
 
     updateRepo(reponame: string) {
       this.reponame = reponame;
+      console.log('reponame in service'+ this.reponame);
     }
 
     updateUser(username: string) {
       this.username = username;
     }
+
 
     /**
     * Handle Http operation that failed.
@@ -74,7 +80,7 @@ export class RepoService {
         console.error(error); // log to console instead
 
         // TODO: better job of transforming error for user consumption
-        this.log(`${operation} failed: ${error.message}`);
+        this.log('${operation} failed: ${error.message}');
 
         // Let the app keep running by returning an empty result.
         return of(result as T);
@@ -83,6 +89,6 @@ export class RepoService {
 
     /** Log a HeroService message with the MessageService */
     private log(message: string) {
-      this.messageService.add(`HeroService: ${message}`);
+      this.messageService.add('RepoService: ${message}');
     }
   }

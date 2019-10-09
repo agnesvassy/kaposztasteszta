@@ -1,0 +1,109 @@
+/* The starting CSS styles for the enter animation */
+.app-repo {
+  transition:0.5s linear all;
+  opacity:0;
+}
+
+/* The finishing CSS styles for the enter animation */
+.app-repo {
+  opacity:1;
+}
+
+nav{
+  display: flex;
+  justify-content: space-evenly;
+  position: fixed;
+  left:0;
+  right:0;
+  height: 9vmin;
+  z-index: 10;
+}
+h2, h3{
+  color:#777;
+}
+input{
+  height: 5vmin;
+  width: 35vmin;
+  margin-right: 1vmin;
+  color: #777;
+  padding: 0 0 0 2vmin;
+}
+nav button{
+  color: #8BB7F0;
+  border: 1px solid #8BB7F0;
+  transition: .5s;
+}
+nav button:hover{
+  background-color: #8BB7F0;
+  border: 1px solid #8BB7F0;
+  color:#fff;
+}
+
+li{
+  list-style: none;
+}
+.list-group-item.heading, .issuedetails{
+  justify-content: space-between;
+}
+.issuelist{
+  width: 40%;
+}
+.labels{
+  font-size:.8em;
+}
+.heading{
+  background: rgba(139, 183, 240,1);
+  padding:2vmin;
+  color:#777;
+  top:9vmin;
+  position: fixed;
+  left:0;
+  right:0;
+  z-index: 10;
+  text-transform: uppercase;
+
+}
+.content{
+  position: relative;
+  margin-top:20vmin;
+  z-index: 1;
+  overflow: auto;
+  height: 100vh;
+}
+.issuelist, .repolist{
+  height: 100%;
+  overflow: scroll;
+  width: 50%;
+}
+.card, .issuelist li{
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+}
+.card-footer{
+  justify-content: space-between;
+}
+.card.active{
+  border: 2px solid #8BB7F0;
+  box-shadow: 0px 2px 6px #8BB7F0;
+}
+.card-footer>.btn-outline-info{
+  color:#8BB7F0;
+  border: 1px solid #8BB7F0;
+  transition:.5s ease-in-out;
+}
+.card-footer>.btn-outline-info:hover{
+  background:none;
+  color:#8BB7F0;
+  border: 1px solid #8BB7F0;
+  transform: scale(1.1,1.1);
+}
+a, svg{
+  color:#8BB7F0;
+  transition:.5s ease-in-out;
+}
+a:hover{
+  text-decoration: none;
+  color:#8BB7F0;
+}
+a:hover svg{
+  transform: scale(1.2,1.2);
+}
